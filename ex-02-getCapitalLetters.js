@@ -6,7 +6,15 @@
  *
 **/
 
-
+function getCapitalLetters(text) {
+    var capitalLttrs = [];
+        for (var i = 0; i < text.length; i++){
+            if (text[i] === text[i].toUpperCase() && text[i] !== " ") {
+                capitalLttrs.push(text[i]);
+            }
+        }
+        return capitalLttrs;
+}
 
 
 

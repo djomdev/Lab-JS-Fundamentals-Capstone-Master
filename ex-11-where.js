@@ -10,7 +10,22 @@
 
 
 
-
+function where(array, parameter){
+    var list = [];
+    for(var i =0; i < array.length; i++){
+      var x = array[i];
+      var found = true;
+      for(var key in parameter){ //iterar sobre el objeto -- 
+        if(x[key] !== parameter[key]){
+          found = false;
+        }
+      }
+      if(found === true){
+        list.push(x);
+      }
+  }
+  return list;
+}
 
 
 

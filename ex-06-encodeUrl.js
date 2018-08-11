@@ -20,7 +20,34 @@
 *
 **/
 
+function encodeURL(string) {
+    var newArray = string.split("");
+    var message = "";
 
+    for (var i = 0; i < newArray.length; i++) {
+        var currentChar = newArray[i];
+
+        if (currentChar === " ") {
+            newArray[i] = "%20";
+        } else if (currentChar === "!") {
+            newArray[i] = "%21";
+        } else if (currentChar === '"') {
+            newArray[i] = "%22";
+        } else if (currentChar === "$") {
+            newArray[i] = "%24";
+        } else if (currentChar === "%") {
+            newArray[i] = "%25";
+        } else if (currentChar === "'") {
+            newArray[i] = "%27";
+        }
+    }
+
+    for (var j = 0; j < newArray.length; j++) {
+        message += newArray[j];
+    }
+
+    return message;
+}
 
 
 

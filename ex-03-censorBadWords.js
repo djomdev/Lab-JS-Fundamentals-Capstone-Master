@@ -8,8 +8,8 @@
 **/
 
 
-function censorBadWords(array, string) {
-	var x = string.split(" ");
+function censorBadWords(array, str) {
+	var x = str.split(" ");
     for (var i = 0; i < str.length; i++) {
         var y = x.indexOf(array[i]);
         if (y !== -1) {

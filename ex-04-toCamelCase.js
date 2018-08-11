@@ -7,6 +7,20 @@
  *
  */
 
+ function toCamelCase(text){
+     var tempText = text.split(" ");
+     var tempWord = [];
+    for (var i = 1; i < tempText.length; i++){
+        tempWord = tempText[i].split('');
+        for (var j = 0; j < tempWord.length; j++){
+            tempWord[j] = tempWord[j].toLowerCase();
+        }
+        tempWord[0] = tempWord[0].toUpperCase();
+        tempText[i] = tempWord.join('');
+    }
+    result = tempText.join('');
+    return result;
+ }
 
 
 

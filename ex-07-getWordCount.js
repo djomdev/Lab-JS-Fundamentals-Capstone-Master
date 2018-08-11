@@ -9,7 +9,42 @@
 **/
 
 
+function getWordCount(string){
+    var newArray = clean(string.split(""));
+    var object = {};
 
+    for (var i = 0; i < newArray.length; i++){
+        var word = newArray[i];
+        var counter = 0;
+
+        for (var j = 0; j < newArray.length; j++){
+            var current = newArray[j];
+
+            if (word === current){
+                counter += 1;
+            }
+        }
+        object[word] = counter;
+    }
+    return object;
+}
+
+function clean(string){
+    let cleanText= "";
+    for (let i = 0; i < string.length; i++){
+        if(string[i] === "'" || string[i] === "." ||
+           string[i] === ";" || string[i] === "-" ||
+           string[i] === "," || string[i] === "!" ||
+           string[i] === "?" || string[i] === "_" ||
+           string[i] === "[" || string[i] === "]")
+           {
+               cleanText += " ";
+           }else{
+               cleanText += string[i].toLowerCase();
+           }
+    }
+    return cleanText.split(' ');
+}
 
 
 

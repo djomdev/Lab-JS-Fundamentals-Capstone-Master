@@ -17,7 +17,66 @@
  *   }
 **/
 
+function showStats(number, array) {
+    var equal = equalTo(number, array);
+    // var greater = greaterThan(number, array);
+    // var less = lessThan(number, array);
+    var greater = lessThan(number, array);
+    var less = greaterThan(number, array);
+    var length = arrayLength(array);
 
+    var objeto = {
+        count_inputEqualTo: equal,
+        count_inputGreaterThan: greater,
+        count_inputLessThan: less,
+        inputArraySize: length
+    }
+    return objeto;
+}
+
+function equalTo(number, array) {
+    var finalCount = 0;
+
+    for (var i = 0; i < array.length; i++) {
+        var current = array[i];
+
+        if (number === current) {
+            finalCount += 1;
+        }
+    }
+    return finalCount
+}
+
+function greaterThan(number, array) {
+    var finalCount = 0;
+
+    for (var i = 0; i < array.length; i++) {
+        var current = array[i];
+
+        if (number < current) {
+            finalCount += 1;
+        }
+    }
+    return finalCount
+}
+
+function lessThan(number, array) {
+    var finalCount = 0;
+
+    for (var i = 0; i < array.length; i++) {
+        var current = array[i];
+
+        if (number > current) {
+            finalCount += 1;
+        }
+    }
+    return finalCount
+}
+
+function arrayLength(array) {
+    var result = array.length;
+    return result;
+}
 
 
 
